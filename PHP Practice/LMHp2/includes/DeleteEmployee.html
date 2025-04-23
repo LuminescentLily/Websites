@@ -1,0 +1,36 @@
+<form method="POST">
+    Employee ID: <input type="text" name="employ"/>
+    <input type="submit" value="Search" name="submit"/>
+
+
+    
+<?php 
+    session_start();
+    
+include 'display_results_table.php';
+    
+    if(isset($_POST['submit']))
+{
+   $employ_id = $_POST['employ'];
+    $_SESSION["employ_id"]=$employ_id;
+
+       $sql = "SELECT * FROM employees WHERE CONCAT(employees.EMPLOYEE_ID) = '$employ_id'";
+       $check=mysqli_query($conn, $sql);
+
+       echo '<h3>' . "Is this the right employee you would like to delete?" . '</h3>';
+       echo display_results_table($check);?>
+    <input type="submit" value="Yes" name="button"/>
+    <input type="submit" value="No" name="button"/>
+
+    <?php } ?>
+
+    
+</form>
+
+
+
+
+<!--<form method="POST">
+    Employee ID: <input type="text" name="employ"/>
+    <input type="submit" value="Search" name="submit"/>
+</form>-->

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>11-01-22</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!-- Set View Size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Stylesheets -->
+    <link href="css/destyle.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <!-- Google Font(s) -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon/favicon.png" type="image/png" sizes="16x16">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    
+             
+</head>
+<body>
+
+    
+    <h1>Infinite Scroll - Masonry image grid, vanilla JS</h1>
+
+    <div class="grid are-images-unloaded">
+      <div class="grid__col-sizer"></div>
+      <div class="grid__gutter-sizer"></div>
+      <div class="grid__item grid__item--height2"></div>
+      <div class="grid__item grid__item--width2">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="orange tree" />
+      </div>
+      <div class="grid__item grid__item--height3"></div>
+      <div class="grid__item grid__item--height1"></div>
+      <div class="grid__item grid__item--height2"></div>
+      <div class="grid__item">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" alt="look out" />
+      </div>
+    
+      <div class="grid__item grid__item--height1"></div>
+      <div class="grid__item grid__item--height3"></div>
+      <div class="grid__item grid__item--height1"></div>
+      <div class="grid__item grid__item--height3"></div>
+      <div class="grid__item grid__item--height1"></div>
+      <div class="grid__item grid__item--height1"></div>
+      <div class="grid__item grid__item--width2">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/raspberries.jpg" alt="rasberries" />
+      </div>
+      <div class="grid__item grid__item--height2"></div>
+      <div class="grid__item grid__item--height2"></div>
+      <div class="grid__item grid__item--height3"></div>
+      <div class="grid__item grid__item--height1"></div>
+      <div class="grid__item grid__item--height2"></div>
+    </div>
+    
+    <div class="page-load-status">
+      <div class="loader-ellips infinite-scroll-request">
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+      </div>
+      <p class="infinite-scroll-last">End of content</p>
+      <p class="infinite-scroll-error">No more pages to load</p>
+    </div>
+    
+    
+    <script src='https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.js'></script>
+    <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
+    <script>
+        //-------------------------------------//
+
+        let grid = document.querySelector('.grid');
+
+        let msnry = new Masonry( grid, {
+        itemSelector: 'none', // select none at first
+        columnWidth: '.grid__col-sizer',
+        gutter: '.grid__gutter-sizer',
+        percentPosition: true,
+        stagger: 30,
+        // nicer reveal transition
+        visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+        hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+        });
+
+
+        // initial items reveal
+        imagesLoaded( grid, function() {
+        grid.classList.remove('are-images-unloaded');
+        msnry.options.itemSelector = '.grid__item';
+        let items = grid.querySelectorAll('.grid__item');
+        msnry.appended( items );
+        });
+
+        //-------------------------------------//
+        // hack CodePen to load pens as pages
+
+        var nextPenSlugs = [
+        '202252c2f5f192688dada252913ccf13',
+        'a308f05af22690139e9a2bc655bfe3ee',
+        '6c9ff23039157ee37b3ab982245eef28',
+        ];
+
+        function getPenPath() {
+        let slug = nextPenSlugs[ this.loadCount ];
+        if ( slug ) {
+            return `/desandro/debug/${slug}`;
+        }
+        }
+
+        //-------------------------------------//
+        // init Infinte Scroll
+
+        let infScroll = new InfiniteScroll( grid, {
+        path: getPenPath,
+        append: '.grid__item',
+        outlayer: msnry,
+        status: '.page-load-status',
+        });
+
+    </script>
+</body>
+</html>
+
+
+<!--   
+
+<video autoplay loop id="video-background" muted plays-inline>
+    <source src="/video/.mp4">
+</video>    
+
+-->

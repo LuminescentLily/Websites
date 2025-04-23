@@ -1,0 +1,135 @@
+/* 11-02-22 */
+
+body {
+  color: #111111;
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;  
+  line-height: 1.4;
+  font-size: 18px;
+  padding: 20px;
+  max-width: 640px;
+  margin: 0 auto;  
+}
+.grid {
+  max-width: 1200px;
+}
+
+/* reveal grid after images loaded */
+.grid.are-images-unloaded {
+  opacity: 0;
+}
+
+.grid__item,
+.grid__col-sizer {
+  width: 32%;
+}
+
+.grid__gutter-sizer { width: 2%; }
+
+/* hide by default */
+.grid.are-images-unloaded .image-grid__item {
+  opacity: 0;
+}
+
+.grid__item {
+  margin-bottom: 20px;
+  float: left;
+}
+
+.grid__item--height1 { height: 140px; background: #EA0; }
+.grid__item--height2 { height: 220px; background: #C25; }
+.grid__item--height3 { height: 300px; background: #19F; }
+
+.grid__item--width2 { width: 66%; }
+
+.grid__item img {
+  display: block;
+  max-width: 100%;
+}
+
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+/* loader ellips in separate pen CSS */
+
+/* Classes */
+
+.cmiddle {                                         
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rmiddle {                                         
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* Color Palette
+
+#111111
+#ffffff
+
+/*
+
+
+/* Google Fonts
+
+font-family: 'Roboto', sans-serif;
+
+*/
+
+/* Full Screen Image
+
+background-image:url(../images/);
+background-position: center center;
+background-repeat:  no-repeat;
+background-attachment: fixed;
+background-size:  cover;
+background-color: var(--black);
+
+*/
+
+/* Individual Side Box Shadows
+
+top {
+  box-shadow: 0px -15px 10px -15px #111;
+}
+
+right {
+  box-shadow: 15px 0px 10px -15px #111;
+}
+
+bottom {
+  box-shadow: 0px 15px 10px -15px #111;
+}
+
+left {
+  box-shadow: -15px 0px 10px -15px #111;
+}
+
+*/
+
+/*  Making a Fullscreen Video Background 
+
+#video-background {
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+*/

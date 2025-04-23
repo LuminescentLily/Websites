@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10-11-22</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!-- Set View Size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Stylesheets -->
+    <link href="css/destyle.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <!-- Google Font(s) -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon/favicon.png" type="image/png" sizes="16x16">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
+
+         
+</head>
+<body>
+
+<div id="container">
+
+    <div id="a"></div>
+
+    <div id="b"></div>
+
+    <div id="c">
+
+        <h1>Object Literal</h1>
+        <br />
+        <script>
+        //Defining object
+        let person = {
+            first_name:'Jamie',
+            last_name: 'Smith',
+
+            //method
+            getFunction : function(){
+                return (`The name of the person is
+                ${person.first_name} ${person.last_name}`)
+            },
+
+            //object within object
+            phone_number : {
+                mobile:' 12345',
+                landline:' 6789'
+            }
+        }
+        document.write(person.getFunction());
+        document.write(person.phone_number.landline);
+        </script>
+
+        <br /><br />
+
+        <h1>Object Constructor</h1>
+
+        <br />
+
+        <script>
+        //constructor function    
+        function Record (name, date){
+            this.name = ' ' + name;
+            this.date = ' ' + '[' + date + ']';
+        }
+        var record1 = new Record("Physics","22/12/2012");
+        var record2 = new Record("Chemistry","24/12/2013");
+
+        document.write(record1.name, record1.date);
+        document.write(record2.name, record2.date);
+
+        </script>
+
+        <br /><br />
+
+        <h1>Object Class</h1>
+
+        <br />
+
+        <p id="demo"></p>
+
+        <script>
+        class Car {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+        }
+
+        let myCar01 = new Car("Ford", 2014);
+        let myCar02 = new Car('Chevy', 2018);
+
+        document.getElementById("demo").innerHTML =
+        myCar01.name + " " + myCar01.year + "<br />" + myCar02.name + " " + myCar02.year;
+
+        </script>
+
+        <br /><br />
+
+        <h1>Accessing Objects</h1>
+
+        <br />
+
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+
+        <script>
+        var aperson = { 
+            firstName: "James", 
+            lastName: "Bond", 
+            age: 25, 
+            getFullName: function () { 
+                return this.firstName + ' ' + this.lastName 
+            } 
+        };
+
+        // dot notation
+        document.getElementById("p1").innerHTML = aperson.firstName; 
+        
+        document.getElementById("p2").innerHTML = aperson.lastName; 
+
+        // brackets
+        document.getElementById("p3").innerHTML = aperson["firstName"];
+        
+        document.getElementById("p4").innerHTML = aperson["lastName"];
+
+        // function
+        document.getElementById("p5").innerHTML = aperson.getFullName();
+            
+        </script>
+
+        <br /><br />
+
+        <h1>JSON</h1>
+
+        <br />
+
+        <p id="demo"></p>
+
+        <script>
+        // JSON object
+        const data = {
+            "name": "John",
+            "age": 22,
+            "hobby": {
+            "reading" : true,
+            "gaming" : false,
+            "sport" : "football"
+            },
+            "class" : ["JavaScript", "HTML", "CSS"]
+        }
+
+        // accessing JSON object
+        document.write(data.name + "<br />"); // John
+        document.write(data.hobby.sport + "<br />"); // football
+        document.write(data.class[0]); // Javascript
+        
+        </script>
+
+    </div>
+
+    <div id="d">
+
+        <div class="container middle">
+
+            <div class="card middle">
+    
+                <div class="card-body">
+                    <h5 id="timer1" class="card-title"></h5>
+                    <p class="card-text text-note">Refresh the page to start timer again.</p>
+    
+                    <button type="button" id="pause" class="btn btn-primary">Pause</button>
+                    
+                    <button type="button" id="resume" class="btn btn-secondary">Resume</button>
+    
+                    <button type="button" id="remove" class="btn btn-danger">Remove</button>
+                </div>
+
+            </div>
+    
+        </div>
+
+        <script>
+            $(document).ready(function () {
+    
+                //start a timer
+                $("#timer1").timer();
+    
+                //pause the timer
+                $('#pause').on('click', function () {
+                    $('#timer1').timer('pause');
+                })
+    
+                //resume the timer
+                $('#resume').on('click', function () {
+                    $('#timer1').timer('resume');
+                })
+    
+                //remove the timer
+                $('#remove').on('click', function () {
+                    $('#timer1').timer('remove').hide();
+                    $('#pause,#resume,#remove').hide();
+                    $('.text-note').show();
+                })
+            });
+        </script>
+
+    </div>  
+
+</div>    
+
+</body>
+</html>
+
+
+<!--   
+
+<video autoplay loop id="video-background" muted plays-inline>
+    <source src="/video/.mp4">
+</video>    
+
+-->

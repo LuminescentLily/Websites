@@ -1,0 +1,131 @@
+/* 09-28-21 */
+
+body {
+    color:#111;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    z-index: 10;
+    margin:20px auto 20px auto;
+    width:1040px;
+    height:auto;
+    
+    display: grid;
+    grid-row-gap: 40px;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(5, 200px);
+    grid-auto-rows: 200px auto 100px;
+    grid-template-areas: 
+        "a b b b b"
+        "c c c c c"
+        "d d d d d";
+}
+
+#a, #b, #c, #d {
+    z-index: 15;
+    border:1px solid #111;
+    background-color: #fff;
+}
+
+#color {
+    transition: ease 1s;
+}
+
+#a {
+    grid-area: a;  
+    display:grid;
+    place-items:center;
+}
+
+#b {
+    grid-area: b;
+}
+
+#c {
+    grid-area: c;
+    padding:10px;
+}
+
+#a button, #c button {
+    background-color: rgb(28, 158, 218);
+    border:1px solid #111;
+    padding:5px;
+    color: white;
+}
+
+#c button {
+    margin-bottom: 15px;
+}
+
+#d {
+    grid-area: d;
+}
+
+/* Rotate Box */
+
+#box {
+  float:left;
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+  background-color: coral;
+}
+
+.rotatedBox { 
+ /* transform: rotate(45deg); */
+  transform: skew(30deg) scale(50%);
+  filter:drop-shadow(8px 8px #111);
+
+}
+
+
+/* Google Fonts
+
+font-family: 'Roboto', sans-serif;
+
+*/
+
+/* Full Screen Image
+
+background-image:url(../images/);
+background-position: center center;
+background-repeat:  no-repeat;
+background-attachment: fixed;
+background-size:  cover;
+background-color: #999;
+
+*/
+
+/*  Making a Fullscreen Video Background 
+
+#video-background{
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+*/
+
+/* Individual Side Box Shadows
+
+top {
+  box-shadow: 0px -15px 10px -15px #111;
+}
+bottom {
+  box-shadow: 0px 15px 10px -15px #111;
+}
+left {
+  box-shadow: -15px 0px 10px -15px #111;
+}
+right {
+  box-shadow: 15px 0px 10px -15px #111;
+}
+
+*/

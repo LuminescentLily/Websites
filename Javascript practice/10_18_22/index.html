@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10-18-22</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!-- Set View Size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Stylesheets -->
+    <link href="css/destyle.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    
+    <!-- Google Font(s) -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon/favicon.png" type="image/png" sizes="16x16">
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+         
+</head>
+<body>
+
+<div id="container">
+
+    <div id="a">
+
+        <nav class="navbar">
+            <ul class="nav">
+                <li>
+                    Home
+                    <ul class="dropdown">
+                        <li>Menu 1</li>
+                        <li>Menu 2</li>
+                        <li>Menu 3</li>
+                        <li>Menu 4</li>
+                        <li>Menu 5</li>
+                        <li>Menu 6</li>
+                    </ul>
+                </li>
+                <li>
+                    About
+                    <ul class="dropdown">
+                        <li>Menu 1</li>
+                        <li>Menu 2</li>
+                        <li>Menu 3</li>
+                        <li>Menu 4</li>
+                        <li>Menu 5</li>
+                        <li>Menu 6</li>
+                        <li>Menu 7</li>
+                        <li>Menu 8</li>
+                        <li>Menu 9</li>
+                    </ul>			
+                </li>
+                <li>
+                    Pricing
+                    <ul class="dropdown">
+                        <li>Menu 1</li>
+                        <li>Menu 2</li>
+                        <li>Menu 3</li>
+                    </ul>			
+                </li>
+                <li>
+                    Docs
+                    <ul class="dropdown">
+                        <li>Menu 1</li>
+                        <li>Menu 2</li>
+                    </ul>			
+                </li>
+                <li>
+                    Contact
+                    <ul class="dropdown">
+                        <li>Menu 1</li>
+                        <li>Menu 2</li>
+                        <li>Menu 3</li>
+                        <li>Menu 4</li>
+                        <li>Menu 5</li>
+                    </ul>					
+                </li>
+            </ul>
+        </nav>	
+
+        <div id="title"></div>
+
+    </div>
+
+    <div id="b">
+
+        <div id="toggle" class="middle">
+            
+            <div id="toggle">
+            
+                <div id="circle"></div>
+            
+            </div>
+                          
+        </div>
+
+        <div id="logo"></div>
+
+    </div>
+
+    <div id="c"></div>
+
+    <div id="d" class="middle">
+
+        <h1>&copy;
+            <script>
+                let date =  new Date().getFullYear();
+                document.write(date);
+            </script>
+        </h1>
+
+    </div>
+
+    <div id="e">
+
+        <!-- Video here -->
+
+    </div>
+
+    <div id="f" class="middle">
+
+        <ul>
+            <li>1234 Middle Street</li>
+            <li>Somewhere, US 12345</li>
+            <li>1-800-555-1234</li>
+            <li>company at company.com</li>
+        </ul>
+
+    </div>
+
+</div>
+
+    <script>
+
+    $( document ).ready(function() {
+        
+        // Loop through each nav item
+        $('nav.navbar').children('ul.nav').children('li').each(function(indexCount){
+            
+            // loop through each dropdown, count children and apply a animation delay based on their index value
+            $(this).children('ul.dropdown').children('li').each(function(index){
+                
+                // Turn the index value into a reasonable animation delay
+                var delay = 0.1 + index*0.03;
+                
+                // Apply the animation delay
+                $(this).css("animation-delay", delay + "s")			
+            });
+        });
+    });
+
+    </script>
+
+    <script>
+        var toggled =false;
+        var circle = $("#circle");
+
+        $("#toggle").click(function () {
+        $("h1, p, div").toggleClass("color-white");
+        $("body").toggleClass("bck-color-black");
+        if (!toggled) {
+        circle.css("margin-left","100px");
+        toggled =true;
+        } else {
+        circle.css("margin-left","1px");
+        toggled =false;
+        }
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+<!--   
+
+<video autoplay loop id="video-background" muted plays-inline>
+    <source src="/video/.mp4">
+</video>    
+
+-->

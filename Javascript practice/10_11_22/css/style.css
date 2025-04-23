@@ -1,0 +1,185 @@
+/* 310 Template */
+
+body {
+  color: #111111;
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;    
+}
+
+#container {
+    z-index: 10;
+    margin: 20px auto 20px auto;
+    width: 1040px;
+    height: auto;
+    border: 1px solid #111;
+    padding: 20px;
+
+    /* CSS Grid Structure */
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 200px 1fr;
+    grid-auto-rows: 200px auto 500px;
+    grid-template-areas: 
+        "a b"
+        "c c"
+        "d d";
+} 
+
+#a, #b, #c, #d {
+  z-index: 15;
+  border: 1px solid #111;
+}
+   
+#a {                                           
+    grid-area: a;                               
+}
+
+#b {
+    grid-area: b;
+}
+
+#c {
+    grid-area: c;
+    padding: 20px;
+}
+
+#c h1 {
+    font-size: 2em;
+}
+
+#d {
+    grid-area: d;
+    padding: 25px;
+}
+
+#pause {
+    z-index: 20;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    background-color: lightgreen;
+    font-size: 1.25em;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#resume {
+  z-index: 20;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  background-color: lightgoldenrodyellow;
+  font-size: 1.25em;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+#remove {
+  z-index: 20;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  background-color: lightcoral;
+  font-size: 1.25em;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+/* Classes */
+
+.middle {                                         
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #111;
+}
+
+.card {
+    width: 50%;
+    height: 50%;
+    background-color: lightblue;
+    border: 2px solid #111;
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.card-title {
+    font-size: 4em;
+}
+
+.card-text, .text-note {
+    display: none;
+    font-size: 1.5em;
+}
+
+.btn {
+    border-radius: 5px;
+    border: 1px solid #111;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+/* Color Palette
+
+#111111
+#ffffff
+
+/*
+
+
+/* Google Fonts
+
+font-family: 'Roboto', sans-serif;
+
+*/
+
+/* Full Screen Image
+
+background-image:url(../images/);
+background-position: center center;
+background-repeat:  no-repeat;
+background-attachment: fixed;
+background-size:  cover;
+background-color: var(--black);
+
+*/
+
+/* Individual Side Box Shadows
+
+top {
+  box-shadow: 0px -15px 10px -15px #111;
+}
+
+right {
+  box-shadow: 15px 0px 10px -15px #111;
+}
+
+bottom {
+  box-shadow: 0px 15px 10px -15px #111;
+}
+
+left {
+  box-shadow: -15px 0px 10px -15px #111;
+}
+
+*/
+
+/*  Making a Fullscreen Video Background 
+
+#video-background {
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+*/

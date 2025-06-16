@@ -1,0 +1,149 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(5, 12, 66);
+    color:white;
+}
+
+#workArea{ /*main area where everything is shown*/
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  background-image: url("../images/bgd2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#topBar {
+  justify-content: space-between;
+  align-items: start;
+  display: grid;
+  grid: 150pt / auto auto auto;
+  height: 50pt;
+}
+
+#contact{
+  padding-left: 25pt;
+  padding-top: 15pt;
+}
+#contact a{
+  color: #2fc4ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+#contact a:hover{
+  color: #f0cd07;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+#title h1{
+  position: fixed;
+  font-size: 20pt;
+}
+
+/* CSS button from getcssscan.com*/
+.button-48 {
+  appearance: none;
+  background-color: transparent;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #2fc4ff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+
+}
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  position: absolute;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+  bottom: 1pt;
+  right: 2pt;
+}
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+  bottom: 1pt;
+  right: 2pt;
+}
+.button-48:after {
+  background-color: #FFFFFF;
+}
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+
+#intro{
+  font-size: 50pt;
+  color: transparent;
+  background: linear-gradient(to right, #05b5eb, #f0cd07);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-top: 20%;
+  padding-bottom: 17%;
+  text-align: left;
+  width: 50%;
+  padding-left: 30pt;
+  z-index: 1;
+}
+
+#swipe{
+  background-color: #0b0a0f;
+  color: #FFFFFF;
+  text-align: center;
+  height: 40pt;
+  padding-top: 20pt;
+}
+
+/* The sidepanel menu */
+.sidepanel {
+  height: 250pt;
+  width: 0; /*change with script*/
+  z-index: 1;
+  background-color: #010025;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  float: right;
+}
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ddecfa;
+  display: block;
+  transition: 0.3s;
+}
+.sidepanel a:hover {
+  color: #f1e204;
+  font-weight: bold;
+}

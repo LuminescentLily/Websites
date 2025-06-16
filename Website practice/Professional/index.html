@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Professional Website</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="workArea">
+        <div id="topBar">
+                <div id="contact">
+                    <a href="#">666.333.222</a>
+                </div>
+                <h1 id="title">Space Explo</h1>
+                <button id="menu" class="button-48" role="button" onclick="Menu()"><span class="text">Menu</span></button>
+        </div>
+
+        <div id="mySidepanel" class="sidepanel">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Map</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <h2 id="intro">Bravely going where no man has gone before</h2>
+        <h2 id="swipe">Swipe Up for More info</h2>
+    </div>
+
+</body>
+<script>
+    let flip = true;
+    
+    function Menu() { //toggle the menu sidepanel
+        if (flip){
+            document.getElementById("mySidepanel").style.width = "250px";
+            flip=false;
+        }
+        else{
+            document.getElementById("mySidepanel").style.width = "0px";
+            flip=true;
+        }
+    }
+</script>
+</html>

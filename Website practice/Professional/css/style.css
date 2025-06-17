@@ -15,7 +15,7 @@ body {
   background-size: cover;
 }
 
-#topBar {
+#topBar { /*bar at top with the navigation and title*/
   justify-content: space-between;
   align-items: start;
   display: grid;
@@ -23,7 +23,7 @@ body {
   height: 50pt;
 }
 
-#contact{
+#contact{ /*phone number area*/
   padding-left: 25pt;
   padding-top: 15pt;
 }
@@ -38,7 +38,7 @@ body {
   text-decoration: none;
 }
 
-#title h1{
+#title h1{ /*business name area*/
   position: fixed;
   font-size: 20pt;
 }
@@ -102,7 +102,7 @@ body {
   position: relative;
 }
 
-#intro{
+#intro{ /*greeting message*/
   font-size: 50pt;
   color: transparent;
   background: linear-gradient(to right, #05b5eb, #f0cd07);
@@ -116,7 +116,7 @@ body {
   z-index: 1;
 }
 
-#swipe{
+#swipe{ /*bottom bar that tells users what to do*/
   background-color: #0b0a0f;
   color: #FFFFFF;
   text-align: center;
@@ -124,8 +124,7 @@ body {
   padding-top: 20pt;
 }
 
-/* The sidepanel menu */
-.sidepanel {
+.sidepanel { /* The sidepanel menu */
   height: 250pt;
   width: 0; /*change with script*/
   z-index: 1;

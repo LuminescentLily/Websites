@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Professional Website</title>
+    <title>Simple Example Website</title>
     <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
@@ -30,11 +30,11 @@
     let flip = true;
     
     function Menu() { //toggle the menu sidepanel
-        if (flip){
+        if (flip){ //menu visible
             document.getElementById("mySidepanel").style.width = "250px";
             flip=false;
         }
-        else{
+        else{ //menu hidden
             document.getElementById("mySidepanel").style.width = "0px";
             flip=true;
         }
